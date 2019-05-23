@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>crane.watch</groupId>
+	<artifactId>map-scanner</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>crane-watch-ui-script</name>
+	<description>automation script for crane watch map scanner</description>
+
+	<properties>
+		<github.bonigarcia.version>3.4.0</github.bonigarcia.version>
+		<testng.version>6.8.8</testng.version>
+		<selenium.client.version>3.0.1</selenium.client.version>
+		<slf4j.version>1.6.4</slf4j.version>
+		<maven.compiler.version>1.8</maven.compiler.version>
+		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+		<surefire.plugin.version>2.19.1</surefire.plugin.version>
+		<surefire.report.plugin.version>2.18.1</surefire.report.plugin.version>
+		<json.version>20180130</json.version>
+		<apache.poi.version>4.1.0</apache.poi.version>
+		<commons.io.version>2.4</commons.io.version>
+		<json.simple.version>1.1.1</json.simple.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>${github.bonigarcia.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.client.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${json.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons.io.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>${json.simple.version}</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<sourceDirectory>test</sourceDirectory>
+		<plugins>
+			<!-- Following plugin executes the testng tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${surefire.plugin.version}</version>
+				<configuration>
+					<!-- Suite testng xml file to consider for test execution -->
+					<suiteXmlFiles>
+						<suiteXmlFile>${suiteName}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<!-- Compiler plugin configures the java version to be used for compiling 
+				the code -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${maven.compiler.version}</source>
+					<target>${maven.compiler.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Maven Surefire Report Plugin -->
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${surefire.report.plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<!-- or whatever version you use -->
+					<source>${maven.compiler.version}</source>
+					<target>${maven.compiler.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+	
+</project>

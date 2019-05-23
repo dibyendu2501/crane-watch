@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Suite" parallel="false" verbose="2">
+	<test name="Smoke">
+		<classes>
+			<class name="test.Script">
+			</class>
+		</classes>
+	</test>
+</suite>
