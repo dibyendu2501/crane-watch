@@ -20,7 +20,7 @@
 		<surefire.report.plugin.version>2.18.1</surefire.report.plugin.version>
 		<json.version>20180130</json.version>
 		<apache.poi.version>4.1.0</apache.poi.version>
-		<commons.io.version>2.4</commons.io.version>
+		<commons.io.version>2.7</commons.io.version>
 		<json.simple.version>1.1.1</json.simple.version>
 	</properties>
 
